@@ -9,8 +9,6 @@ router.get("/login", (req, res, next) => {
   res.render("login.ejs", { title: "login Page" });
 });
 
-router.get("/zineb", (req, res, next) => {
-  res.render("affichageReserv.ejs", { title: "display Results" });
-});
+
 
 module.exports = router;

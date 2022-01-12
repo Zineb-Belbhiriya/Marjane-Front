@@ -23,7 +23,8 @@ const login = () => {
     .then((response) => response.json())
     .then((result) => {
       console.log("result is " + JSON.stringify(result));
-      localStorage.setItem("user", JSON.stringify(result.token));
+      localStorage.setItem("user_key", JSON.stringify(result.token));
+      localStorage.setItem("loggedIn", JSON.stringify(result.user.id));
 
       if (JSON.stringify(result.user.role) === "admin_general") {
         console.log("user is admin");

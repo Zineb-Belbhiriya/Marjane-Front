@@ -11,4 +11,8 @@ router.get("/admin/login", (req, res, next) => {
   res.render("loginAdmin.ejs", { title: "Login Admin" });
 });
 
+router.get("/admin/dashbord/GestionMarjane", (req, res, next) => {
+  res.render("marjane.ejs", { title: "Gestion Marjane" });
+});
+
 module.exports = router;

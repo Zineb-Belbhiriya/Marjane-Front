@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+</head>
+
+<body>
+    <div>
+        <div>
+            <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+            <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200">
+                <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
+                    class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
+
+                <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
+                    class="fixed z-30 inset-y-0 left-0 w-64 transition duration-300 transform bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+                    <div class="flex items-center justify-center mt-8">
+                        <div class="flex items-center">
+                            <img src="../public/image/logo.png" alt="logo">
+
+                            <!-- <span class="text-white text-2xl mx-2 font-semibold">Dashboard</span> -->
+                        </div>
+                    </div>
+
+                    <nav class="mt-10">
+                        <a class="flex items-center mt-4 py-2 px-6 bg-gray-700 bg-opacity-25 text-gray-100" href="/">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path>
+                            </svg>
+
+                            <span class="mx-3">Dashboard</span>
+                        </a>
+
+                        <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                            href="/ui-elements">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
+                                </path>
+                            </svg>
+
+                            <span class="mx-3">Gestion Admins</span>
+                        </a>
+                        <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                            href="/ui-elements">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
+                                </path>
+                            </svg>
+
+                            <span class="mx-3">Gestion Marjane</span>
+                        </a>
+
+                        <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                            href="/tables">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                                </path>
+                            </svg>
+
+                            <span class="mx-3">Gestion Chefs Du Rayon</span>
+                        </a>
+
+                        <!-- <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                            href="/forms">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z">
+                                </path>
+                            </svg>
+
+                            <span class="mx-3">Logout</span>
+                        </a> -->
+                    </nav>
+                </div>
+                <div class="flex-1 flex flex-col overflow-hidden">
+                    <header class="flex justify-between items-center py-4 px-6 bg-white border-b-4 border-indigo-600">
+                        <div class="flex items-center">
+                            <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden">
+                                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round"></path>
+                                </svg>
+                            </button>
+
+                            <div class="relative mx-4 lg:mx-0">
+                                <span class="absolute inset-y-0 left-0 pl-3 flex items-center">
+                                    <svg class="h-5 w-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                                        <path
+                                            d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                        </path>
+                                    </svg>
+                                </span>
+
+                                <input class="form-input w-32 sm:w-64 rounded-md pl-10 pr-4 focus:outline-none"
+                                    type="text" placeholder="Search">
+                            </div>
+                        </div>
+
+                        <div class="flex items-center">
+                            <div x-data="{ notificationOpen: false }" class="relative">
+                                <button @click="notificationOpen = ! notificationOpen"
+                                    class="flex mx-4 text-gray-600 focus:outline-none">
+                                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round">
+                                        </path>
+                                    </svg>
+                                </button>
+
+
+                            </div>
+
+                            <div x-data="{ dropdownOpen: false }" class="relative">
+                                <button @click="dropdownOpen = ! dropdownOpen"
+                                    class="relative block h-8 w-8 rounded-full overflow-hidden shadow focus:outline-none">
+                                    <img class="h-full w-full object-cover"
+                                        src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=296&amp;q=80"
+                                        alt="Your avatar">
+                                </button>
+
+                                <div x-show="dropdownOpen" @click="dropdownOpen = false"
+                                    class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>
+
+                                <div x-show="dropdownOpen"
+                                    class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
+                                    style="display: none;">
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
+                                    <a href="#"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
+                                    <a href="/login"
+                                        class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
+                                </div>
+                            </div>
+                        </div>
+                    </header>
+                    <!-- body dash -->
+                    <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
+                        <div class="container mx-auto px-6 py-8">
+                            <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
+
+                            <div class="mt-4">
+
+
+                                <!-- Modal toggle -->
+                                <div class="mt-8">
+                                    <div>
+                                        <button onclick="openModal()"
+                                            class='bg-blue-500 text-white p-2 rounded text-2xl '>Add
+                                            Marjane</button>
+                                    </div>
+                                    <!-- modal -->
+                                    <div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+                                        style="background: rgba(0,0,0,.7);">
+                                        <div
+                                            class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                                            <div class="modal-content py-4 text-left px-6">
+                                                <!--Title-->
+                                                <div class="flex justify-between items-center pb-3">
+                                                    <p class="text-2xl font-bold text-center">Add Marjane Center</p>
+                                                    <div class="modal-close cursor-pointer z-50">
+                                                        <svg class="fill-current text-black"
+                                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                            viewBox="0 0 18 18">
+                                                            <path
+                                                                d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <!--Body-->
+                                                <div class="my-5">
+
+                                                    <div>
+                                                        <div class="flex flex-col mb-5">
+
+                                                            <div class="relative">
+
+                                                                <div class="flex flex-col mb-5">
+                                                                    <label for="email"
+                                                                        class="mb-1 text-xs tracking-wide text-gray-600">City</label>
+                                                                    <div class="relative">
+                                                                        <div class="
+                                                                                                inline-flex
+                                                                                                items-center
+                                                                                                justify-center
+                                                                                                absolute
+                                                                                                left-0
+                                                                                                top-0
+                                                                                                h-full
+                                                                                                w-10
+                                                                                                text-gray-400
+                                                                                              ">
+                                                                            <i class="fas fa-at text-blue-500"></i>
+                                                                        </div>
+
+                                                                        <input id="city" type="text" name="city" class="
+                                                                                                text-sm
+                                                                                                placeholder-gray-500
+                                                                                                pl-10
+                                                                                                pr-4
+                                                                                                rounded-2xl
+                                                                                                border border-gray-400
+                                                                                                w-full
+                                                                                                py-2
+                                                                                                focus:outline-none focus:border-blue-400
+                                                                                              "
+                                                                            placeholder="Enter Marjane City">
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div class="flex w-full">
+                                                                    <button id="marjane_" onclick="addMarjaneCenter()"
+                                                                        class="flex mt-2 items-center justify-center focus:outline-none  text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition  duration-150 ease-in ">
+                                                                        <span class="mr-2 uppercase">Confirm</span>
+                                                                    </button>
+                                                                </div>
+
+                                                                <div class="flex w-full">
+                                                                    <button
+                                                                        class="flex mt-2 items-center justify-center focus:outline-none  text-white text-sm sm:text-base bg-gray-400 hover:bg-gray-300 rounded-2xl py-2 w-full transition  duration-150 ease-in ">
+                                                                        <span class="mr-2 uppercase">Cancel</span>
+                                                                    </button>
+                                                                </div>
+
+                                                            </div>
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                        <!-- body -->
+                                        <div class="flex flex-col mt-8">
+                                            <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                                                <div
+                                                    class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                                                    <table class="min-w-full">
+                                                        <thead>
+                                                            <tr>
+                                                                <th
+                                                                    class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                                    city</th>
+
+                                                            </tr>
+                                                        </thead>
+
+                                                        <tbody class="bg-white">
+                                                            <tr>
+                                                                <!-- td -->
+                                                                <td
+                                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                                    <div class="flex items-center">
+
+
+                                                                        <div class="ml-4">
+                                                                            <div
+                                                                                class="text-sm leading-5 font-medium text-gray-900">
+                                                                                zineb belbhiriya
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </td>
+
+
+                                                                <td
+                                                                    class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                                    <span class="text-yellow-500 flex">
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-5 w-5 text-green-700 mx-2"
+                                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                                            <path
+                                                                                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
+                                                                            </path>
+                                                                            <path fill-rule="evenodd"
+                                                                                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                                                                clip-rule="evenodd"></path>
+                                                                        </svg>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            class="h-5 w-5 text-red-700"
+                                                                            viewBox="0 0 20 20" fill="currentColor">
+                                                                            <path fill-rule="evenodd"
+                                                                                d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                                                clip-rule="evenodd"></path>
+                                                                        </svg>
+                                                                    </span>
+                                                                </td>
+                                                                <!-- <td
+                                                                                    class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
+                                                                                    <a href="#"
+                                                                                        class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                                                                                </td> -->
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../public/javascript/models.js"></script>
+    <script src="path/to/chartjs/dist/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="../public/javascript/statistique.js"></script>
+    <script src="../public/javascript/gestionCentre.js"></script>
+    <!-- <script>
+        const $ = (className) => {
+            return document.querySelector(className);
+        };
+        const addMarjaneCenter = () => {
+            console.log("hhhh");
+
+            var myHeaders = new Headers();
+            myHeaders.append(
+                "Authorization",
+                "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyZXN1bHQiOnsiaWQiOjEsImZ1bGxOYW1lIjoid2FsaWQiLCJlbWFpbCI6IndhbGlkQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbl9nZW5lcmFsIiwiY3JlYXRlZF9hdCI6IjIwMjEtMTItMjBUMTI6NDI6MzcuMDAwWiJ9LCJpYXQiOjE2NDIwMDEwMzQsImV4cCI6MTY0MjAwNDYzNH0.RkCzwLm-mzXc-zRWxayRjHz-pg4euGGAnoiAUBdtjh4");
+            
+        myHeaders.append("Content-Type", "application/json");
+
+        var raw = JSON.stringify({
+            city: $("#city").value,
+            admin_id: localStorage.getItem("loggedIn"),
+        });
+
+        var requestOptions = {
+            method: "POST",
+            headers: myHeaders,
+            body: raw,
+            redirect: "follow",
+        };
+
+        fetch("localhost:8080/api/users/createmarjane", requestOptions)
+            .then((response) => response.json())
+            .then((result) => console.log(result))
+            .catch((error) => console.log("error", error));
+        };
+
+        $("#marjane_").addEventListener("click", (event) => {
+            addMarjaneCenter();
+            console.log("yoi");
+        });
+
+    </script> -->
+
+
+</body>
+
+</html>

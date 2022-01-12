@@ -57,6 +57,17 @@
 
                             <span class="mx-3">Gestion Admins</span>
                         </a>
+                        <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
+                            href="/ui-elements">
+                            <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 14v6m-3-3h6M6 10h2a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2zm10 0h2a2 2 0 002-2V6a2 2 0 00-2-2h-2a2 2 0 00-2 2v2a2 2 0 002 2zM6 20h2a2 2 0 002-2v-2a2 2 0 00-2-2H6a2 2 0 00-2 2v2a2 2 0 002 2z">
+                                </path>
+                            </svg>
+
+                            <span class="mx-3">Gestion Marjane</span>
+                        </a>
 
                         <a class="flex items-center mt-4 py-2 px-6 text-gray-500 hover:bg-gray-700 hover:bg-opacity-25 hover:text-gray-100"
                             href="/tables">
@@ -123,54 +134,7 @@
                                     </svg>
                                 </button>
 
-                                <div x-show="notificationOpen" @click="notificationOpen = false"
-                                    class="fixed inset-0 h-full w-full z-10" style="display: none;"></div>
 
-                                <div x-show="notificationOpen"
-                                    class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-xl overflow-hidden z-10"
-                                    style="width: 20rem; display: none;">
-                                    <a href="#"
-                                        class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                        <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                                            alt="avatar">
-                                        <p class="text-sm mx-2">
-                                            <span class="font-bold" href="#">Sara Salah</span> replied on the <span
-                                                class="font-bold text-indigo-400" href="#">Upload Image</span> artical .
-                                            2m
-                                        </p>
-                                    </a>
-                                    <a href="#"
-                                        class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                        <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                            src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=634&amp;q=80"
-                                            alt="avatar">
-                                        <p class="text-sm mx-2">
-                                            <span class="font-bold" href="#">Slick Net</span> start following you . 45m
-                                        </p>
-                                    </a>
-                                    <a href="#"
-                                        class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                        <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                            src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=334&amp;q=80"
-                                            alt="avatar">
-                                        <p class="text-sm mx-2">
-                                            <span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span
-                                                class="font-bold text-indigo-400" href="#">Test with TDD</span> artical
-                                            . 1h
-                                        </p>
-                                    </a>
-                                    <a href="#"
-                                        class="flex items-center px-4 py-3 text-gray-600 hover:text-white hover:bg-indigo-600 -mx-2">
-                                        <img class="h-8 w-8 rounded-full object-cover mx-1"
-                                            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=398&amp;q=80"
-                                            alt="avatar">
-                                        <p class="text-sm mx-2">
-                                            <span class="font-bold" href="#">Abigail Bennett</span> start following you
-                                            . 3h
-                                        </p>
-                                    </a>
-                                </div>
                             </div>
 
                             <div x-data="{ dropdownOpen: false }" class="relative">
@@ -197,10 +161,12 @@
                             </div>
                         </div>
                     </header>
+                    <!-- body dash -->
                     <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-200">
                         <div class="container mx-auto px-6 py-8">
                             <h3 class="text-gray-700 text-3xl font-medium">Dashboard</h3>
 
+                            <!-- statistique -->
                             <div class="mt-4">
                                 <div class="flex flex-wrap -mx-6">
                                     <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
@@ -282,82 +248,288 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="mt-4">
+                                <div class="flex flex-wrap-mx-6">
+                                    <div class="w-full px-6 sm:w-1/2 xl:w-1/3">
+                                        <div class="flex items-center px-5 py-6 shadow-sm rounded-md bg-white">
 
-                            <div class="mt-8">
+                                            <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
 
-                            </div>
+                                        </div>
 
-                            <div class="flex flex-col mt-8">
-                                <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
-                                    <div
-                                        class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
-                                        <table class="min-w-full">
-                                            <thead>
-                                                <tr>
-                                                    <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Name</th>
-                                                    <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Title</th>
-                                                    <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Status</th>
-                                                    <th
-                                                        class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
-                                                        Role</th>
-                                                    <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
-                                                </tr>
-                                            </thead>
+                                        <div class=" w-full mt-6 px-6 sm:w-1/2 xl:w-1/3 sm:mt-0">
 
-                                            <tbody class="bg-white">
-                                                <tr>
-                                                    <!-- td -->
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="flex items-center">
-                                                            <div class="flex-shrink-0 h-10 w-10">
-                                                                <img class="h-10 w-10 rounded-full"
-                                                                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=facearea&amp;facepad=2&amp;w=256&amp;h=256&amp;q=80"
-                                                                    alt="">
-                                                            </div>
+                                        </div>
 
-                                                            <div class="ml-4">
-                                                                <div
-                                                                    class="text-sm leading-5 font-medium text-gray-900">
-                                                                    John
-                                                                    Doe
+
+                                    </div>
+
+
+                                </div>
+
+                                <!-- Modal toggle -->
+                                <div class="mt-8">
+                                    <div>
+                                        <button onclick="openModal()"
+                                            class='bg-blue-500 text-white p-2 rounded text-2xl font-bold'>Add
+                                            Admin</button>
+                                    </div>
+                                    <!-- modal -->
+                                    <div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+                                        style="background: rgba(0,0,0,.7);">
+                                        <div
+                                            class="border border-teal-500 shadow-lg modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
+                                            <div class="modal-content py-4 text-left px-6">
+                                                <!--Title-->
+                                                <div class="flex justify-between items-center pb-3">
+                                                    <p class="text-2xl font-bold text-center">Add Admin Center</p>
+                                                    <div class="modal-close cursor-pointer z-50">
+                                                        <svg class="fill-current text-black"
+                                                            xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                                            viewBox="0 0 18 18">
+                                                            <path
+                                                                d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                                                            </path>
+                                                        </svg>
+                                                    </div>
+                                                </div>
+                                                <!--Body-->
+                                                <div class="my-5">
+
+                                                    <div action="#">
+                                                        <div class="flex flex-col mb-5">
+                                                            <label for="email"
+                                                                class="mb-1 text-xs tracking-wide text-gray-600">Full
+                                                                Name:</label>
+                                                            <div class="relative">
+                                                                <div class="
+                                                                    inline-flex
+                                                                    items-center
+                                                                    justify-center
+                                                                    absolute
+                                                                    left-0
+                                                                    top-0
+                                                                    h-full
+                                                                    w-10
+                                                                    text-gray-400
+                                                                  ">
+                                                                    <i class="fas fa-user text-blue-500"></i>
                                                                 </div>
-                                                                <div class="text-sm leading-5 text-gray-500">
-                                                                    john@example.com
-                                                                </div>
+
+                                                                <input id="email" type="email" name="email" class="
+                                                                    text-sm
+                                                                    placeholder-gray-500
+                                                                    pl-10
+                                                                    pr-4
+                                                                    rounded-2xl
+                                                                    border border-gray-400
+                                                                    w-full
+                                                                    py-2
+                                                                    focus:outline-none focus:border-blue-400
+                                                                  " placeholder="Enter your name">
                                                             </div>
                                                         </div>
-                                                    </td>
+                                                        <div class="flex flex-col mb-5">
+                                                            <label for="email"
+                                                                class="mb-1 text-xs tracking-wide text-gray-600">E-Mail
+                                                                Address:</label>
+                                                            <div class="relative">
+                                                                <div class="
+                                                                    inline-flex
+                                                                    items-center
+                                                                    justify-center
+                                                                    absolute
+                                                                    left-0
+                                                                    top-0
+                                                                    h-full
+                                                                    w-10
+                                                                    text-gray-400
+                                                                  ">
+                                                                    <i class="fas fa-at text-blue-500"></i>
+                                                                </div>
 
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <div class="text-sm leading-5 text-gray-900">Software Engineer
+                                                                <input id="email" type="email" name="email" class="
+                                                                    text-sm
+                                                                    placeholder-gray-500
+                                                                    pl-10
+                                                                    pr-4
+                                                                    rounded-2xl
+                                                                    border border-gray-400
+                                                                    w-full
+                                                                    py-2
+                                                                    focus:outline-none focus:border-blue-400
+                                                                  " placeholder="Enter your email">
+                                                            </div>
                                                         </div>
-                                                        <div class="text-sm leading-5 text-gray-500">Web dev</div>
-                                                    </td>
+                                                        <div class="flex flex-col mb-6">
+                                                            <label for="password"
+                                                                class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Password:</label>
+                                                            <div class="relative">
+                                                                <div class="
+                                                                    inline-flex
+                                                                    items-center
+                                                                    justify-center
+                                                                    absolute
+                                                                    left-0
+                                                                    top-0
+                                                                    h-full
+                                                                    w-10
+                                                                    text-gray-400
+                                                                  ">
+                                                                    <span>
+                                                                        <i class="fas fa-lock text-blue-500"></i>
+                                                                    </span>
+                                                                </div>
 
-                                                    <td class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
-                                                        <span
-                                                            class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Active</span>
-                                                    </td>
+                                                                <input id="password" type="password" name="password"
+                                                                    class="
+                                                                    text-sm
+                                                                    placeholder-gray-500
+                                                                    pl-10
+                                                                    pr-4
+                                                                    rounded-2xl
+                                                                    border border-gray-400
+                                                                    w-full
+                                                                    py-2
+                                                                    focus:outline-none focus:border-blue-400
+                                                                  " placeholder="Enter your password">
+                                                            </div>
+                                                        </div>
+                                                        <div class="flex flex-col mb-6">
+                                                            <svg class="w-2 h-2 absolute top-0 right-0 m-4 pointer-events-none"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                viewBox="0 0 412 232">
+                                                                <path
+                                                                    d="M206 171.144L42.678 7.822c-9.763-9.763-25.592-9.763-35.355 0-9.763 9.764-9.763 25.592 0 35.355l181 181c4.88 4.882 11.279 7.323 17.677 7.323s12.796-2.441 17.678-7.322l181-181c9.763-9.764 9.763-25.592 0-35.355-9.763-9.763-25.592-9.763-35.355 0L206 171.144z"
+                                                                    fill="#648299" fill-rule="nonzero" />
+                                                            </svg>
+                                                            <select
+                                                                class="border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
+                                                                <option>Choose Center</option>
+                                                                <option>1</option>
+                                                                <option>2</option>
+                                                                <option>3</option>
 
-                                                    <td
-                                                        class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
-                                                        Owner</td>
+                                                            </select>
 
-                                                    <td
+                                                        </div>
+
+                                                        <div class="flex w-full">
+                                                            <button type="submit"
+                                                                class="flex mt-2 items-center justify-center focus:outline-none  text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition  duration-150 ease-in ">
+                                                                <span class="mr-2 uppercase">Confirm</span>
+                                                            </button>
+                                                        </div>
+
+                                                        <div class="flex w-full">
+                                                            <button type="submit"
+                                                                class="flex mt-2 items-center justify-center focus:outline-none  text-white text-sm sm:text-base bg-gray-400 hover:bg-gray-300 rounded-2xl py-2 w-full transition  duration-150 ease-in ">
+                                                                <span class="mr-2 uppercase">Cancel</span>
+                                                            </button>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <!-- body -->
+                                <div class="flex flex-col mt-8">
+                                    <div class="-my-2 py-2 overflow-x-auto sm:-mx-6 sm:px-6 lg:-mx-8 lg:px-8">
+                                        <div
+                                            class="align-middle inline-block min-w-full shadow overflow-hidden sm:rounded-lg border-b border-gray-200">
+                                            <table class="min-w-full">
+                                                <thead>
+                                                    <tr>
+                                                        <th
+                                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                            FullName</th>
+                                                        <th
+                                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                            Email</th>
+                                                        <th
+                                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                            Password</th>
+                                                        <th
+                                                            class="px-6 py-3 border-b border-gray-200 bg-gray-50 text-left text-xs leading-4 font-medium text-gray-500 uppercase tracking-wider">
+                                                            Center</th>
+                                                        <th class="px-6 py-3 border-b border-gray-200 bg-gray-50"></th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody class="bg-white">
+                                                    <tr>
+                                                        <!-- td -->
+                                                        <td
+                                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                            <div class="flex items-center">
+
+
+                                                                <div class="ml-4">
+                                                                    <div
+                                                                        class="text-sm leading-5 font-medium text-gray-900">
+                                                                        zineb belbhiriya
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </td>
+
+                                                        <td
+                                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                            <div class="text-sm leading-5 text-gray-900">
+                                                                zineb@example.com
+
+                                                            </div>
+                                                        </td>
+
+                                                        <td
+                                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200 text-sm leading-5 text-gray-500">
+                                                            1234</td>
+
+
+                                                        <td
+                                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                            <span
+                                                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Safi</span>
+                                                        </td>
+
+                                                        <td
+                                                            class="px-6 py-4 whitespace-no-wrap border-b border-gray-200">
+                                                            <span class="text-yellow-500 flex">
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-green-700 mx-2"
+                                                                    viewBox="0 0 20 20" fill="currentColor">
+                                                                    <path
+                                                                        d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
+                                                                    </path>
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                                    class="h-5 w-5 text-red-700" viewBox="0 0 20 20"
+                                                                    fill="currentColor">
+                                                                    <path fill-rule="evenodd"
+                                                                        d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                                                        clip-rule="evenodd"></path>
+                                                                </svg>
+                                                            </span>
+                                                        </td>
+                                                        <!-- <td
                                                         class="px-6 py-4 whitespace-no-wrap text-right border-b border-gray-200 text-sm leading-5 font-medium">
                                                         <a href="#"
                                                             class="text-indigo-600 hover:text-indigo-900">Edit</a>
-                                                    </td>
-                                                </tr>
+                                                    </td> -->
+                                                    </tr>
 
-                                            </tbody>
-                                        </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -367,7 +539,11 @@
             </div>
         </div>
     </div>
+
     <script src="../public/javascript/models.js"></script>
+    <script src="path/to/chartjs/dist/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="../public/javascript/statistique.js"></script>
 
 
 </body>
